@@ -1,6 +1,6 @@
 import { TrashIcon } from "@heroicons/react/24/solid";
 import { Button, CircularProgress } from "@nextui-org/react";
-import { useProductDetail } from "../../app/[locale]/(layout)/context/ProductProvider";
+import { useProductDetail } from "../[locale]/(layout)/context/ProductProvider";
 import axios from "axios";
 import { useAuth } from "../../context/AuthContext";
 import { getSignedUrlApi } from "../../network/api/product";
