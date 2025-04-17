@@ -1,7 +1,7 @@
 import { log, logErr } from "../utils/helpers";
 
 // Make sure endpoint never resolves to undefined
-export const ENDPOINT = process.env.NEXT_PUBLIC_LOCAL_ENDPOINT || "https://api.epicxplorer.com";
+export const ENDPOINT = process.env.NEXT_PUBLIC_LOCAL_ENDPOINT ;
 
 export async function post({ route, data, config, reval, cache = "force-cache" }: {
   route: string; data: any; config?: { headers: any }; reval?: any;
@@ -57,6 +57,7 @@ export async function patch({ route, data, config }: { route: string; data: any;
       throw err;
     });
 };
+
 export async function get({ route, config }: { route: string; config: { headers: any } }) {
   return fetch(ENDPOINT + route, {
     method: "GET", // or 'PUT'

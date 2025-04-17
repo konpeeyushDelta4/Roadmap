@@ -128,18 +128,18 @@ export async function getSubmissionDetailApi({ token, ...raw }: { token?: string
   });
 }
 
-export async function changeSubmissionStatusApi({ token, ...raw }: { token: string; submission_id: string; status: string }) {
-  return post({
-    route: "/api/v1/changeSubmissionStatus",
-    data: JSON.stringify(raw),
-    config: {
-      headers: {
-        Authorization: "Bearer " + token,
-        "content-type": "application/json",
-      },
-    },
-  });
-}
+// export async function changeSubmissionStatusApi({ token, ...raw }: { token: string; submission_id: string; status: string }) {
+//   return post({
+//     route: "/api/v1/changeSubmissionStatus",
+//     data: JSON.stringify(raw),
+//     config: {
+//       headers: {
+//         Authorization: "Bearer " + token,
+//         "content-type": "application/json",
+//       },
+//     },
+//   });
+// }
 
 export async function addSubmissionUpvoteApi({ token, ...raw }: { token: string; submission_id: string; status: string }) {
   return post({

@@ -21,7 +21,7 @@ import {
   updateUserDetailApi,
 } from "../../network/api/user";
 import { ApiResType } from "../../types/enum";
-import { addProductApi, getSignedUrlApi } from "../../network/api/product";
+import { getSignedUrlApi } from "../../network/api/product";
 
 export default function ProfileModal({
   open,

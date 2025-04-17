@@ -4,7 +4,7 @@ import { useProductDetail } from "../(layout)/context/ProductProvider";
 import axios from "axios";
 import { useAuth } from "../../context/AuthContext";
 import { getSignedUrlApi } from "../../network/api/product";
-import { addAnnoucementMediaApi, removeAnnoucementMediaApi, updateAnnoucementMediaApi, updateAnnouncementApi } from "../../network/api/product/announcement";
+import { addAnnoucementMediaApi, removeAnnoucementMediaApi, updateAnnoucementMediaApi } from "../../network/api/product/announcement";
 import { addSubmissionCommentMediaApi, addSubmissionMediaApi, removeSubmissionCommentMediaApi, removeSubmissionMediaApi, updateSubmissionApi, updateSubmissionCommentMediaApi, updateSubmissionMediaApi } from "../../network/api/product/roadmap";
 import React, { useEffect, useState } from "react";
 import { IoIosClose } from "react-icons/io";

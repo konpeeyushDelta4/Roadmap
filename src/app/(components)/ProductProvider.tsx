@@ -1,7 +1,7 @@
 "use client";
 import { useAuth } from "../../context/AuthContext";
 import { getProductDetailApi } from "../../network/api/product";
-import { getSubscriptionApi } from "../../network/api/subscription";
+// import { getSubscriptionApi } from "../../network/api/subscription";
 import { usePathname, useRouter } from "next/navigation";
 import React, {
   createContext,
@@ -52,32 +52,32 @@ export default function ProductProvider({
     {} as SubscriptionDetailT
   );
 
-  const fetchSubscription = useCallback(async () => {
-    if (!token || !prodDetail?.id) return;
-    try {
-      const res = await getSubscriptionApi({
-        token,
-        product_id: prodDetail?.id?.toString(),
-      });
-      if (res?.type === ApiResType.SUCCESS) {
-        const duration = res?.data?.plan_name?.split("_")[1];
-        setPlanDuratoin(duration || "");
-        setSubscriptionDetail(res?.data || ({} as SubscriptionDetailT));
-        setPlanName(res?.data?.plan_name || SubscriptionE.FREE);
-        setIsFree(false);
-      }
-      if (res?.type === ApiResType.ERROR) {
-        setIsFree(true);
-      }
-    } catch (error) {
-      setIsFree(true);
-      console.log(error, "something went wrong");
-    }
-  }, [token, prodDetail?.id]);
+  // const fetchSubscription = useCallback(async () => {
+  //   if (!token || !prodDetail?.id) return;
+  //   try {
+  //     const res = await getSubscriptionApi({
+  //       token,
+  //       product_id: prodDetail?.id?.toString(),
+  //     });
+  //     if (res?.type === ApiResType.SUCCESS) {
+  //       const duration = res?.data?.plan_name?.split("_")[1];
+  //       setPlanDuratoin(duration || "");
+  //       setSubscriptionDetail(res?.data || ({} as SubscriptionDetailT));
+  //       setPlanName(res?.data?.plan_name || SubscriptionE.FREE);
+  //       setIsFree(false);
+  //     }
+  //     if (res?.type === ApiResType.ERROR) {
+  //       setIsFree(true);
+  //     }
+  //   } catch (error) {
+  //     setIsFree(true);
+  //     console.log(error, "something went wrong");
+  //   }
+  // }, [token, prodDetail?.id]);
 
-  useEffect(() => {
-    fetchSubscription();
-  }, [fetchSubscription]);
+  // useEffect(() => {
+  //   fetchSubscription();
+  // }, [fetchSubscription]);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
