@@ -22,7 +22,6 @@ import {
 } from "../../network/api/user";
 import { ApiResType } from "../../types/enum";
 import { addProductApi, getSignedUrlApi } from "../../network/api/product";
-import { useTranslations } from "next-intl";
 
 export default function ProfileModal({
   open,
@@ -36,7 +35,6 @@ export default function ProfileModal({
   const [updatingImage, setUpdatingImage] = useState(false);
   const [fName, setFName] = useState("");
   const [lName, setLName] = useState("");
-  const t = useTranslations("Profile");
   const [imageUrl, setImageUrl] = useState("");
 
   useEffect(() => {
@@ -139,7 +137,7 @@ export default function ProfileModal({
       <ModalContent>
         <>
           <ModalHeader className="flex flex-col gap-1">
-            {t("My Profile")}
+            My Profile
           </ModalHeader>
           <ModalBody>
             <div>
@@ -199,7 +197,7 @@ export default function ProfileModal({
                   value={fName}
                   onChange={(e) => setFName(e.target.value)}
                   type="text"
-                  label={t("First Name")}
+                  label="First Name"
                   placeholder="Your first name"
                   labelPlacement="outside"
                 />
@@ -209,17 +207,17 @@ export default function ProfileModal({
                   value={lName}
                   onChange={(e) => setLName(e.target.value)}
                   type="text"
-                  label={t("Last Name")}
+                  label="Last Name"
                   placeholder="Your last name"
                   labelPlacement="outside"
                 />
 
                 <div className="flex gap-2">
                   <Button color={"primary"} type="submit" isLoading={updating}>
-                    {t("Save")}
+                    Save
                   </Button>
                   <Button onPress={onClose} type="button" variant="light">
-                    {t("Close")}
+                    Close
                   </Button>
                 </div>
               </form>

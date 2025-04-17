@@ -1,34 +1,40 @@
 import { log, logErr } from "../utils/helpers";
 
-export const ENDPOINT = process.env.NEXT_PUBLIC_LOCAL_ENDPOINT ;
+// Make sure endpoint never resolves to undefined
+export const ENDPOINT = process.env.NEXT_PUBLIC_LOCAL_ENDPOINT || "https://api.epicxplorer.com";
 
 export async function post({ route, data, config, reval, cache = "force-cache" }: {
   route: string; data: any; config?: { headers: any }; reval?: any;
   cache?: "force-cache" | "no-cache" | "reload" | "only-if-cached" | "default" | undefined
 }) {
-  return fetch(ENDPOINT + route, {
-    method: "POST", // or 'PUT'
-    headers: {
-      ...config?.headers,
-    },
-    body: data,
-    cache,
-    ...(reval ? { next: reval } : {}),
-  })
-    .then(async (response) => {  
-
-      if (!response.ok) {
-        const text = await response.text(); 
-        throw new Error(`Server error: ${response.status} - ${text}`);
-      }
-    
-      const data = await response.json();
-      return data;
-    })
-    .catch((err) => {
-      console.error("Fetch error:", err);
+  if (!ENDPOINT) {
+    console.error("API Endpoint is not defined");
+    return { type: "ERROR", message: "API Endpoint is not configured", code: 500 };
+  }
+  
+  try {
+    const response = await fetch(ENDPOINT + route, {
+      method: "POST",
+      headers: {
+        ...config?.headers,
+      },
+      body: data,
+      cache,
+      ...(reval ? { next: reval } : {}),
     });
-};
+
+    if (!response.ok) {
+      const text = await response.text();
+      throw new Error(`Server error: ${response.status} - ${text}`);
+    }
+    
+    const responseData = await response.json();
+    return responseData;
+  } catch (err) {
+    console.error("Fetch error:", err);
+    return { type: "ERROR", message: err instanceof Error ? err.message : "Unknown error occurred", code: 500 };
+  }
+}
 
 export async function patch({ route, data, config }: { route: string; data: any; config: { headers: any } }) {
   return fetch(ENDPOINT + route, {

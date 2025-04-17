@@ -1,0 +1,183 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  height: 100%;
+}
+
+:root {
+  --primary-color: 146 95 255;
+  --accent-color: "#FFF743",
+  --navbarHeight: 56px;
+  --productDetailTabBarHeight: 40px;
+  --productDetailRoadMapSidebar: calc(var(--navbarHeight) + var(--productDetailTabBarHeight));
+  --domainNavbarHeight: 60px;
+  --domainSecondaryNavbarHeight: 48px;
+}
+
+/* the slides
+.slick-slide {
+  margin: 0 5px;
+}
+
+/* the parent */
+/* .slick-list {
+  margin: 0 -17px;
+} */
+.slick-list {
+  margin: 0 -5px;
+  border-radius: 12px;
+}
+
+.slick-slide > div {
+  padding: 0 5px;
+}
+
+.slick-next:before {
+  display: none;
+}
+
+.slick-prev:before {
+  display: none;
+}
+
+/* ===== Scrollbar CSS ===== */
+/* Firefox */
+@supports not selector(::-webkit-scrollbar) {
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #925fff #00000000;
+}
+}
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 4px;
+  border-radius: inherit;
+}
+
+*::-webkit-scrollbar-track {
+  background: #afafaf2f;
+  border-radius: inherit;
+}
+
+*::-webkit-scrollbar-thumb {
+  margin-left: 10px;
+  background-color: #925fff;
+  border-radius: inherit;
+}
+
+.horizontal_scrollbar{
+  &::-webkit-scrollbar{
+    height: 4px;
+  }
+}
+
+.glow {
+  font-size: 5rem;
+  animation: pulsate 0.11s ease-in-out infinite alternate;
+}
+
+@keyframes pulsate {
+  100% {
+    text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff, 0 0 40px #925fff, 0 0 80px #925fff, 0 0 90px #925fff, 0 0 100px #925fff, 0 0 150px #925fff;
+  }
+
+  0% {
+    text-shadow: 0 0 4px #fff, 0 0 10px #fff, 0 0 18px #fff, 0 0 38px #925fff, 0 0 73px #925fff, 0 0 80px #925fff, 0 0 94px #925fff, 0 0 140px #925fff;
+  }
+}
+
+.md-styles {
+  @apply bg-content1/70 p-5 rounded-xl border-[1px] border-foreground/20;
+  h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    @apply text-foreground/90;
+  }
+  h2 {
+    
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
+  h3 {
+    font-size: 1.25rem;
+    font-weight: 500;
+    @apply text-primary;
+  }
+  
+  h4 {
+    font-size: 1rem;
+    font-weight: 500;
+  }
+  h5 {
+    font-size: 0.75rem;
+    font-weight: 500;
+  }
+  h6 {
+    font-size: 0.5rem;
+    font-weight: 500;
+  }
+
+  ol, ul,p{
+    font-size: 15px;
+    margin-bottom: 1em;
+  }
+
+  ol {
+    margin-left: 3em;
+    li {
+      list-style: decimal;
+    }
+  }
+
+  ul {
+    padding-left: 3em;
+    li {
+      list-style: disc;
+    }
+  }
+
+
+  a{
+    @apply text-blue-500 underline ;
+    }
+
+  table,
+  th,
+  td {
+    padding: 10px;
+    border-collapse: collapse;
+  }
+
+  p {
+    margin: 1em;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-bottom: 0.5em; /* You can adjust the value (e.g., 0.5em, 1.5em) as needed */
+  }
+}
+
+.success_anim{
+  width: fit-content;
+  svg{
+    height: auto !important;
+    width: auto !important;
+    max-height: 250px;
+  }
+
+}
+
+.error_anim{
+  width: fit-content;
+  svg{
+    height: auto !important;
+    width: auto !important;
+    max-height: 300px;
+  }
+}
