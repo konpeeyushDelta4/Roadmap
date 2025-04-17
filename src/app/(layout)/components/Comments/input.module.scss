@@ -11,7 +11,7 @@
 }
 
 .mentions--multiLine .mentions__input {
-    border: 1px solid hsl(var(--nextui-foreground-300));
+    border: 1px solid hsl(var(--heroui-foreground-300));
     border-radius: 10px;
     padding: 9px;
     outline: 0;
@@ -22,8 +22,8 @@
 
 .mentions__suggestions__list {
     overflow: hidden;
-    background-color: hsl(var(--nextui-content2));
-    border: 1px solid hsl(var(--nextui-foreground-300));
+    background-color: hsl(var(--heroui-content2));
+    border: 1px solid hsl(var(--heroui-foreground-300));
     border-radius: 5px;
     font-size: 14px;
 }
@@ -35,7 +35,7 @@
 
 .mentions__suggestions__item--focused {
     background-color: rgba(var(--primary-color) / 0.8);
-    color: hsl(var(--nextui-foreground)) !important;
+    color: hsl(var(--heroui-foreground)) !important;
 }
 
 .mentions__mention {

@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { Modal, ModalContent } from "@nextui-org/modal";
+import { Modal, ModalContent } from "@heroui/modal";
 import LoginCard from "./LoginCard";
 import { useAuth } from "../../context/AuthContext";
 

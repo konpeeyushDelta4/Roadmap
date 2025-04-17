@@ -1,5 +1,5 @@
 "use client";
-import { Button, Input, divider } from "@nextui-org/react";
+import { Button, Input, divider } from "@heroui/react";
 import { getAuth, sendSignInLinkToEmail } from "firebase/auth";
 import { firebaseApp } from "../../network/firebase";
 import { FormEventHandler, useCallback, useEffect, useState } from "react";

@@ -5,7 +5,7 @@ export default function Aside() {
 }
 
 // "use client";
-// import { Button, Chip, Divider } from "@nextui-org/react";
+// import { Button, Chip, Divider } from "@heroui/react";
 // import Avatar from "app/components/Avatar";
 // import { useAuth } from "context/AuthContext";
 // import { format } from "date-fns";

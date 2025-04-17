@@ -6,7 +6,7 @@ import { tv } from "tailwind-variants";
 import { usePathname } from "next/navigation";
 import { content } from "../../variants";
 import { MapIcon, MegaphoneIcon } from "@heroicons/react/24/solid";
-import { Button, Listbox, ListboxItem, Popover, PopoverContent, PopoverTrigger } from "@nextui-org/react";
+import { Button, Listbox, ListboxItem, Popover, PopoverContent, PopoverTrigger } from "@heroui/react";
 import { useAuth } from "../../../../../context/AuthContext";
 import Avatar from "../../../../(components)/Avatar";
 import { useEffect, useState } from "react";
@@ -73,7 +73,7 @@ export default function TopBar() {
             ) : (
               <Button
                 size="sm"
-                onClick={() => {
+                onPress={() => {
                   setLoginOpen(true);
                 }}
                 className="flex"

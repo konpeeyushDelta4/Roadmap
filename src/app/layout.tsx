@@ -18,7 +18,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
     const host = process.env.NODE_ENV === "development" ? process.env.NEXT_PUBLIC_DOMAIN : headerList.get("host");
 
     return (
-        <html>
+        <html suppressHydrationWarning>
             <head>
                 <link rel="icon" type="image/x-icon" href="/favicon.ico" />
             </head>

@@ -1,5 +1,5 @@
 "use client";
-import { Button, Textarea } from "@nextui-org/react";
+import { Button, Textarea } from "@heroui/react";
 import { useAuth } from "../../../../context/AuthContext";
 import { editSubmissionCommentApi } from "../../../../network/api/product/roadmap";
 import React, { useEffect, useState } from "react";
@@ -208,7 +208,7 @@ export default function EditBox({
             size="sm"
             color="primary"
             isDisabled={!comment.text}
-            onClick={() => {
+            onPress={() => {
               onComment();
               setComment({} as SubmissionCommetsT);
             }}
@@ -218,7 +218,7 @@ export default function EditBox({
           {onCancel && (
             <Button
               size="sm"
-              onClick={() => {
+              onPress={() => {
                 setComment({} as SubmissionCommetsT);
                 onCancel();
               }}

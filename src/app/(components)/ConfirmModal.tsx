@@ -1,7 +1,7 @@
-import { Modal, ModalContent } from '@nextui-org/react';
-import { Divider } from '@nextui-org/react';
+import { Modal, ModalContent } from '@heroui/react';
+import { Divider } from '@heroui/react';
 import React from 'react'
-import { Button } from '@nextui-org/react';
+import { Button } from '@heroui/react';
 
 export default function ConfirmModal({ isOpen, onClose, onConfirm, title, loading=false }: {
     isOpen: boolean;

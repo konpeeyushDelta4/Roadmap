@@ -12,7 +12,7 @@ export default function page() {
 // import { SubmissionDetailT } from "types/product";
 // import MainContent from "./(components)/MainContent";
 // import Aside from "./(components)/Aside";
-// import { Divider } from "@nextui-org/react";
+// import { Divider } from "@heroui/react";
 // import { useAuth } from "context/AuthContext";
 
 // export default function FeatureDetail({

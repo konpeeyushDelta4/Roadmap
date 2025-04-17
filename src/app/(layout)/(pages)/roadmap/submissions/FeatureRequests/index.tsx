@@ -1,7 +1,7 @@
 "use client";
 import React, { Dispatch, SetStateAction, useState } from "react";
 import { SubmissionDetailT, SubmissionBoardT } from "../../../../../../types/product";
-import { Button, Input, Listbox, ListboxItem, Popover, PopoverContent, PopoverTrigger } from "@nextui-org/react";
+import { Button, Input, Listbox, ListboxItem, Popover, PopoverContent, PopoverTrigger } from "@heroui/react";
 import FeatureRequestsList from "./List";
 import { ChevronDown, Tags } from "lucide-react";
 import { tv } from "tailwind-variants";
@@ -89,7 +89,7 @@ export default function FeatureRequests({
                           class: `${indx === 0 ? "rounded-t-md" : ""} ${indx === topics.length - 1 ? "rounded-b-md" : ""}`,
                           state: topicFilter.includes(t.id) ? "selected" : "not_selected",
                         })}
-                        onClick={() => {
+                        onPress={() => {
                           if (topicFilter.includes(t.id)) {
                             setTopicFilter((p) => p.filter((i) => i !== t.id));
                           } else {

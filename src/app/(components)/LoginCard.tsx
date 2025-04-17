@@ -1,5 +1,5 @@
 "use client";
-import { Button } from "@nextui-org/react";
+import { Button } from "@heroui/react";
 import React from "react";
 import EmailLinkAuth from "./EmailLinkAuth";
 import GoogleIcon from "./icons/GoogleIcon";

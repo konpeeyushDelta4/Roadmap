@@ -1,10 +1,10 @@
 "use client";
 import React from "react";
-import { Modal, ModalContent } from "@nextui-org/react";
+import { Modal, ModalContent } from "@heroui/react";
 import { useAuth } from "../../../../context/AuthContext";
 import EmailLinkAuth from "../../../(components)/EmailLinkAuth";
 import { useTranslations } from "next-intl";
-import { Button } from "@nextui-org/react";
+import { Button } from "@heroui/react";
 import GoogleIcon from "../../../(components)/icons/GoogleIcon";
 import { useDomainCtx } from "../../context/DomainCtxProvider";
 import { useProductDetail } from "../../context/ProductProvider";

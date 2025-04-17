@@ -8,7 +8,7 @@ import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@nextui-org/react";
+} from "@heroui/react";
 import React, { useEffect, useMemo, useState } from "react";
 import { BsDot } from "react-icons/bs";
 import { PiDotsThreeOutlineVerticalBold } from "react-icons/pi";

@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import Comment from "./Comment";
-import { Divider, Spinner } from "@nextui-org/react";
+import { Divider, Spinner } from "@heroui/react";
 import { SubmissionCommetsT, SubmissionJantaT } from "../../../../types/product";
 
 export default function Feed({

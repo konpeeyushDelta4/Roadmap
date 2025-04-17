@@ -1,5 +1,5 @@
 "use client";
-import { Button, Textarea } from "@nextui-org/react";
+import { Button, Textarea } from "@heroui/react";
 import { useAuth } from "../../../../context/AuthContext";
 import { addSubmissionCommentApi } from "../../../../network/api/product/roadmap";
 import React, { useEffect, useMemo, useState } from "react";
@@ -222,7 +222,7 @@ export default function CommnetBox({
             color="primary"
             isLoading={loading}
             isDisabled={!comment.text}
-            onClick={() => {
+            onPress={() => {
               onComment();
               setComment({} as SubmissionCommetsT);
             }}
@@ -232,7 +232,7 @@ export default function CommnetBox({
           {onCancel && (
             <Button
               size="sm"
-              onClick={() => {
+              onPress={() => {
                 setComment({} as SubmissionCommetsT);
                 onCancel();
               }}

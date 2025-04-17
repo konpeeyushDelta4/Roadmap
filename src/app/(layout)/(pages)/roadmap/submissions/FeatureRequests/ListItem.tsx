@@ -1,5 +1,5 @@
 "use client";
-import { Button, Chip, Listbox, ListboxItem, Popover, PopoverContent, PopoverTrigger } from "@nextui-org/react";
+import { Button, Chip, Listbox, ListboxItem, Popover, PopoverContent, PopoverTrigger } from "@heroui/react";
 import React, { useState } from "react";
 import { SubmissionDetailT, topicT } from "../../../../../../types/product";
 import { RxDot } from "react-icons/rx";
@@ -125,7 +125,7 @@ export default function ListItem({ data, onDelete }: { data: SubmissionDetailT; 
                           base: " first:rounded-t-medium last:rounded-b-medium rounded-none gap-3 py-2 bg-surface1 px-3",
                         }}
                       >
-                        <ListboxItem onClick={() => router.push(`/roadmap/update/${data?.post_uid}`)} key="edit">
+                        <ListboxItem onPress={() => router.push(`/roadmap/update/${data?.post_uid}`)} key="edit">
                           Edit
                         </ListboxItem>
                         <ListboxItem

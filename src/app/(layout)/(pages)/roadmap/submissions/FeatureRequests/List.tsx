@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { SubmissionDetailT, SubmissionBoardT } from "../../../../../../types/product";
 import ListItem from "./ListItem";
-import { Spinner } from "@nextui-org/react";
+import { Spinner } from "@heroui/react";
 import useInfiniteScroll from "react-infinite-scroll-hook";
 import { Feature_requests } from "../../../../../../utils/helpers";
 

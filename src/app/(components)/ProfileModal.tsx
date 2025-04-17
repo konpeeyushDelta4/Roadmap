@@ -7,7 +7,7 @@ import {
   ModalFooter,
   ModalHeader,
   Spinner,
-} from "@nextui-org/react";
+} from "@heroui/react";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import Avatar from "./Avatar";

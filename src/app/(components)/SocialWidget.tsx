@@ -7,7 +7,7 @@ import DiscordLogo from "./logos/Discord";
 import TwitterLogo from "./logos/Twitter";
 import YoutubeLogo from "./logos/Youtube";
 import { tv } from "tailwind-variants";
-import { Button, Tooltip } from "@nextui-org/react";
+import { Button, Tooltip } from "@heroui/react";
 import { FiArrowLeft } from "react-icons/fi";
 
 export default function SocialWidget() {
@@ -46,7 +46,7 @@ export default function SocialWidget() {
         variant="light"
         radius="full"
         size="sm"
-        onClick={() => setClosed(true)}
+        onPress={() => setClosed(true)}
       >
         <FiArrowLeft size={16} />
       </Button>

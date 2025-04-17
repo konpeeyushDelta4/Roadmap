@@ -1,5 +1,5 @@
 "use client";
-import { NextUIProvider } from "@nextui-org/react";
+import { HeroUIProvider } from "@heroui/react";
 import AppProvider from "../context/AppContext";
 import AuthContext from "../context/AuthContext";
 import { ThemeProvider } from "next-themes";
@@ -12,7 +12,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
   return (
     <AuthContext>
       <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-        <NextUIProvider>
+        <HeroUIProvider>
           <AppProvider>
             <ProgressBar
               height="3px"
@@ -27,7 +27,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
             hideProgressBar
             theme="light"
           />
-        </NextUIProvider>
+        </HeroUIProvider>
       </ThemeProvider>
     </AuthContext>
   );

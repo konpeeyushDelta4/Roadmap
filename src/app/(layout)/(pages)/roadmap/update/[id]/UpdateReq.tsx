@@ -1,5 +1,5 @@
 "use client";
-import { Button, Checkbox, Select, SelectItem, Textarea } from "@nextui-org/react";
+import { Button, Checkbox, Select, SelectItem, Textarea } from "@heroui/react";
 import { useAuth } from "../../../../../../context/AuthContext";
 import React, { useEffect, useState } from "react";
 import { getSubmissionDetailApi, updateSubmissionApi } from "../../../../../../network/api/product/roadmap";
@@ -171,7 +171,7 @@ export default function UpdateReq({ post_uid }: { post_uid?: string }) {
         {(productDetail?.role === Role.OWNER || user?.role === Role.ADMIN || user?.role === Role.EDITOR) && (
           <Select label="Board" items={boards} placeholder="Select a Board" variant="bordered" selectedKeys={[boardID]} onSelectionChange={(e: any) => setBoardID(e.currentKey)} color="primary">
             {boards?.map((b) => (
-              <SelectItem key={b?.id?.toString()} value={b?.id?.toString()} onClick={() => setBoardID(b?.id?.toString())}>
+              <SelectItem key={b?.id?.toString()} onPress={() => setBoardID(b?.id?.toString())}>
                 {b?.name}
               </SelectItem>
             ))}
@@ -213,7 +213,7 @@ export default function UpdateReq({ post_uid }: { post_uid?: string }) {
             >
               {topics.map((t) => {
                 return (
-                  <SelectItem key={t.id} value={t.id}>
+                  <SelectItem key={t.id}>
                     {t.name}
                   </SelectItem>
                 );
@@ -271,7 +271,7 @@ export default function UpdateReq({ post_uid }: { post_uid?: string }) {
       </div>
 
       <div className="text-center space-x-2 my-5">
-        <Button isDisabled={!formData.feature_name || !formData.description} className="capitalize" isLoading={loading} color="primary" onClick={handleSubmit}>
+        <Button isDisabled={!formData.feature_name || !formData.description} className="capitalize" isLoading={loading} color="primary" onPress={handleSubmit}>
           Update
         </Button>
         <Button as={Link} href={`/roadmap/submissions`}>

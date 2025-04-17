@@ -1,5 +1,5 @@
 "use client";
-import { Button } from "@nextui-org/react";
+import { Button } from "@heroui/react";
 import { useTheme } from "next-themes";
 import MoonIcon from "./icons/MoonIcon";
 import SunIcon from "./icons/SunIcon";
@@ -23,7 +23,7 @@ export default function ToggleTheme() {
         variant="light"
         radius="full"
         isIconOnly
-        onClick={
+        onPress={
           theme === "light" ? () => setTheme("dark") : () => setTheme("light")
         }
         className={` flex justify-center items-center`}

@@ -10,7 +10,7 @@ export default function MainContent() {
 // import React, { useState } from "react";
 // import { SubmissionDetailT, topicT } from "types/product";
 // import Aside from "./Aside";
-// import { Chip } from "@nextui-org/react";
+// import { Chip } from "@heroui/react";
 
 // export default function MainContent({ user_vote_status, upvote_count, user, status, id, feature_name, description, createdAt, roadmap_topic, roadmap_media }: SubmissionDetailT) {
 //   const topics =

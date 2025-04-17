@@ -1,5 +1,5 @@
 "use client";
-import { Button, Select, SelectItem, Textarea } from "@nextui-org/react";
+import { Button, Select, SelectItem, Textarea } from "@heroui/react";
 import { useAuth } from "../../../../../context/AuthContext";
 import React, { useEffect, useState } from "react";
 import { addSubmissionApi } from "../../../../../network/api/product/roadmap";
@@ -225,7 +225,7 @@ export default function CreateReq({ onCreate, onTitleChange, onFocus, tsearch }:
             >
               {topics.map((t) => {
                 return (
-                  <SelectItem key={t.id} value={t.id}>
+                  <SelectItem key={t.id}>
                     {t.name}
                   </SelectItem>
                 );
@@ -236,11 +236,11 @@ export default function CreateReq({ onCreate, onTitleChange, onFocus, tsearch }:
       </div>
       <div className="mt-3">
         {token ? (
-          <Button isDisabled={!formData.feature_name || !formData.description} className="capitalize" isLoading={loading} color="primary" onClick={handleSubmit}>
+          <Button isDisabled={!formData.feature_name || !formData.description} className="capitalize" isLoading={loading} color="primary" onPress={handleSubmit}>
             Create
           </Button>
         ) : (
-          <Button onClick={() => setLoginOpen(true)} color="primary">
+          <Button onPress={() => setLoginOpen(true)} color="primary">
             Login to create
           </Button>
         )}
