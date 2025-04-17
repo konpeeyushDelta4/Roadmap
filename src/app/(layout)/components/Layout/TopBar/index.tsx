@@ -1,58 +1,38 @@
 "use client";
-import { useProductDetail } from "../../../context/ProductProvider";
-import Link from "next/link";
-import { Scroll } from "lucide-react";
 import { tv } from "tailwind-variants";
 import { usePathname } from "next/navigation";
 import { content } from "../../variants";
-import { MapIcon, MegaphoneIcon } from "@heroicons/react/24/solid";
 import { Button, Listbox, ListboxItem, Popover, PopoverContent, PopoverTrigger } from "@heroui/react";
 import { useAuth } from "../../../../../context/AuthContext";
 import Avatar from "../../../../(components)/Avatar";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { BiSolidExit } from "react-icons/bi";
-import { FaEdit, FaPen } from "react-icons/fa";
+import { FaEdit } from "react-icons/fa";
 import ProfileModal from "../../../../(components)/ProfileModal";
-import { useDomainCtx } from "../../../context/DomainCtxProvider";
-import { Role } from "../../../../../types/enum";
-import { DOMAIN_TOPBAR_HEIGHT } from "../../../../../utils/ui";
 import ToggleTheme from "../../../../(components)/ToggleTheme";
+import Link from "next/link";
 
 export default function TopBar() {
-  const { productDetail } = useProductDetail();
-  const { setLoginOpen } = useDomainCtx();
-  const { token, user } = useAuth();
+
+  const { token, user, setLoginOpen } = useAuth();
   const pathname = usePathname();
   const [dropIt, setDropIt] = useState(false);
   const [profileOpen, setProfileOpen] = useState(false);
 
-  useEffect(() => {
-    console.log(productDetail, "productDetail");
-  }, [productDetail]);
-
   if (pathname.includes("sso/success")) return <></>;
 
   return (
-    <div style={{ height: DOMAIN_TOPBAR_HEIGHT + "px" }} className="sticky z-20 top-0 bg-foreground-100 dark:bg-content1  ">
+    <div  className="sticky z-20 top-0 bg-foreground-100 dark:bg-content1">
       <div className={content()}>
         {/* TOP  */}
         <div className="flex justify-between items-center h-domainNavbar">
           {/* BRAND  */}
-          <div className="flex gap-3 items-center">
-            <img className="h-[38px] rounded-md overflow-hidden" src={productDetail?.logo_url} alt="Logo" />
-            <h4 className="font-semibold  ">{productDetail?.product_detail?.title}</h4>
-
-            {token && (Role.ADMIN === user?.role || Role.OWNER == user?.role) && (
-              <a
-                target="_blank"
-                href={`https://epicxplorer.com/product/${productDetail.slug}/settings/general`}
-                className="text-foreground-400 hover:text-foreground-800 inline-flex transition-all h-[32px] aspect-square mb-1 items-center justify-center cursor-pointer"
-              >
-                <FaPen />
-              </a>
-            )}
+          <div className="flex items-center">
+            <Link href="/roadmap" className="font-semibold text-lg hover:text-primary transition-colors">
+              YourGPT RoadMap
+            </Link>
           </div>
-          <div className="flex gap-1 items-center">
+          <div className="flex gap-4 items-center">
             <ToggleTheme />
             {token ? (
               <Popover isOpen={dropIt} onOpenChange={(open) => setDropIt(open)} showArrow offset={10}>
@@ -82,45 +62,6 @@ export default function TopBar() {
               >
                 Login/SignUp
               </Button>
-            )}
-          </div>
-        </div>
-
-        {/* SECONDARY  */}
-        <div className="mt-2 flex">
-          <div className="flex gap-2">
-            {Boolean(productDetail?.product_dashboard_setting?.enable_submissions) && (
-              <Link
-                href="/roadmap"
-                className={linkV({
-                  state: pathname.includes("roadmap") ? "active" : "n",
-                })}
-              >
-                <MapIcon height={18} />
-                <span>Roadmap</span>
-              </Link>
-            )}
-            {/* {Boolean(productDetail?.product_dashboard_setting?.enable_announcements) && (
-              <Link
-                href="/announcements"
-                className={linkV({
-                  state: pathname.includes("announcements") ? "active" : "n",
-                })}
-              >
-                <MegaphoneIcon height={18} />
-                <span>Announcements</span>
-              </Link>
-            )} */}
-            {Boolean(productDetail?.product_dashboard_setting?.enable_changelogs) && (
-              <Link
-                href="/changelogs"
-                className={linkV({
-                  state: pathname.includes("changelogs") ? "active" : "n",
-                })}
-              >
-                <Scroll height={18} />
-                <span>Changelogs</span>
-              </Link>
             )}
           </div>
         </div>

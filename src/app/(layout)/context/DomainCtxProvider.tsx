@@ -42,6 +42,7 @@ export default function DomainCtxProvider({
   useEffect(() => {
     if (!token || !host) return;
 
+
     async function getTopicsLsit() {
       try {
         const res = await getProductSubmissionTopicApi({
