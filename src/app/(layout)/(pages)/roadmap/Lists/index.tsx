@@ -29,6 +29,7 @@ export default function Lists({ allSubmissions }: { allSubmissions: SubmissionDe
 
       if (res.type === ApiResType.SUCCESS) {
         setList(res?.data || []);
+        console.log(res?.data, "res");
       }
     } catch (err) {
       console.log(err);

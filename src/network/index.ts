@@ -24,8 +24,23 @@ export async function post({ route, data, config, reval, cache = "force-cache" }
     });
 
     if (!response.ok) {
-      const text = await response.text();
-      throw new Error(`Server error: ${response.status} - ${text}`);
+      let errorMessage;
+      try {
+        // Try to parse as JSON first
+        const errorData = await response.json();
+        errorMessage = errorData.message || `Server error: ${response.status}`;
+      } catch (parseError) {
+        // Fallback to text if not JSON
+        try {
+          const text = await response.text();
+          errorMessage = text || `Server error: ${response.status}`;
+        } catch (textError) {
+          // Last resort if we can't get text either
+          errorMessage = `Server error: ${response.status}`;
+        }
+      }
+      
+      return { type: "ERROR", message: errorMessage, code: response.status };
     }
     
     const responseData = await response.json();

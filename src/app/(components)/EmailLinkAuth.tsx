@@ -9,7 +9,6 @@ import { STORAGE_KEYS } from "../../utils/constants";
 import { sendMagicLinkOnEmailApi } from "../../network/api/auth";
 import { ApiResType } from "../../types/enum";
 import { toast } from "react-toastify";
-import { useTranslations } from "next-intl";
 
 let auth: any;
 
@@ -55,18 +54,18 @@ const EmailLinkAuth: React.FC = () => {
       setLoading(false);
     }
   }
-  const t = useTranslations("Login");
+  
   return (
     <form className={"w-full"} onSubmit={onFormSubmit}>
       <div className="text-left mb-2">
         <label className="flex gap-2 mb-2 text-sm items-center" htmlFor="email">
           <WandIcon sx="text-accent" />
-          {t("Login with Magic Link")}
+          Login with Magic Link
         </label>
         <Input
           radius="full"
           size="sm"
-          placeholder={t("Enter your email")}
+          placeholder="Enter your email"
           id="email"
           name="email"
           type="email"
@@ -89,7 +88,7 @@ const EmailLinkAuth: React.FC = () => {
 
       {err && (
         <span className="text-red-500">
-          {t("Sorry, we encountered an error")}
+          Sorry, we encountered an error
         </span>
       )}
       {success && <span className="text-green-500">{success}</span>}

@@ -98,7 +98,16 @@ export async function removeSubmissionMediaApi({ token, ...raw }: { token: strin
 }
 
 export async function getProductSubmissionApi({ token, reval, ...raw }: {
-  token?: string; product_id?: string; page?: string; limit?: string; search?: string; domain?: string; status?: SubmissionStatusE; slug?: string; reval?: any; topic_id?: string,
+  token?: string;
+  product_id?: string;
+  page?: string;
+  limit?: string;
+  search?: string;
+  domain?: string;
+  status?: SubmissionStatusE;
+  slug?: string;
+  reval?: any;
+  topic_id?: string;
   submission_board_id?: string;
   board_slug?: string;
 }) {
