@@ -29,7 +29,6 @@ export default async function page() {
 
   return (
     <div className={content({ class: "py-10" })}>
-      {/* TODO: This is our second page of submissions, we need to change the data to be fetched from the API */}
       <Content allSubmissions={Feature_requests.data || allSubmissions} />
     </div>
   );

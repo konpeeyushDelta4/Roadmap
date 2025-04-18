@@ -190,7 +190,7 @@ export async function getSubmissionCommentApi({ token, ...raw }: { token?: strin
   });
 }
 
-export async function removeSubmissionCommentApi({ token, ...raw }: { token: string; comment_id: string; parent_comment_id?: string; product_id: string; submission_id: string }) {
+export async function removeSubmissionCommentApi({ token, ...raw }: { token: string; comment_id: string; parent_comment_id?: string;  submission_id: string }) {
   return post({
     route: "/api/v1/removeSubmissionComment",
     data: JSON.stringify(raw),

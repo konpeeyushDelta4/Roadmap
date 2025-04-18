@@ -23,7 +23,8 @@ async function getPostDetail({ slug, uid, token }: { slug: string; uid: string; 
 }
 
 export default async function FeatureDetail({ params }: { params: { slug: string } }) {
-  const slug = params?.slug;
+  const parsedParams = await params;
+  const slug = parsedParams?.slug;
   const token = (await cookies()).get("epic_token")?.value;
   const uid = slug.split("-").pop() || "";
   const detail = await getPostDetail({ slug, uid, token });
@@ -42,10 +43,10 @@ type Props = {
 export async function generateMetadata({ params }: Props): // parent: ResolvingMetadata
 Promise<Metadata> {
   // read route params
-
+  const parsedParams = await params;
   const headersList = await headers();
   const host = process.env.NEXT_PUBLIC_LOCAL_ENDPOINT ? process.env.NEXT_PUBLIC_DOMAIN : headersList.get("host");
-  const slug = params?.slug;
+  const slug = parsedParams?.slug;
   const post_uid = slug?.split("-").pop() || slug;
 
   const res1 = await getProductByDomain({ domain: host || "" });

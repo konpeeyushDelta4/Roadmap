@@ -110,7 +110,7 @@ export default function Comment({
       const res = await removeSubmissionCommentApi({
         token,
         comment_id: comment?.id?.toString(),
-        product_id: productDetail?.id?.toString(),
+        // product_id: productDetail?.id?.toString(),
         submission_id: submissionID,
       });
       if (res.type === ApiResType.SUCCESS) {
@@ -230,7 +230,7 @@ export default function Comment({
                         base: "first:rounded-t-medium last:rounded-b-medium rounded-none gap-3 py-2 bg-surface1 px-3",
                       }}
                     >
-                      <ListboxItem onClick={() => setIsIdit(true)} key="edit">
+                      <ListboxItem onPress={() => setIsIdit(true)} key="edit">
                         Edit
                       </ListboxItem>
                       <ListboxItem

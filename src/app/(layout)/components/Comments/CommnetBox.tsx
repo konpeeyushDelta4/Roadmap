@@ -1,5 +1,5 @@
 "use client";
-import { Button, Textarea } from "@heroui/react";
+import { Button } from "@heroui/react";
 import { useAuth } from "../../../../context/AuthContext";
 import { addSubmissionCommentApi } from "../../../../network/api/product/roadmap";
 import React, { useEffect, useMemo, useState } from "react";
@@ -122,7 +122,7 @@ export default function CommnetBox({
   return (
     <div className="w-full my-2">
       <StyledInputDiv>
-        <MentionsInput
+        {/* <MentionsInput
           classNames={classnames}
           placeholder={placeholder}
           value={comment.text || ""}
@@ -156,7 +156,7 @@ export default function CommnetBox({
             )}
             data={mentionData}
           />
-        </MentionsInput>
+        </MentionsInput> */}
       </StyledInputDiv>
 
       <div className="flex items-start gap-3  my-2">

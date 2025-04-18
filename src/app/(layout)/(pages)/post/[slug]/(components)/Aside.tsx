@@ -102,7 +102,7 @@ export default function Aside({
         <div className={valueS}>{formateDate(createdAt)}</div>
       </div>
       {/* <Divider className="mb-3" /> */}
-      <Button disableRipple color="primary" onClick={voteUp} startContent={isVoted ? <BellOff width={17} /> : <BellRing width={17} />} className="w-full mt-2">
+      <Button disableRipple color="primary" onPress={voteUp} startContent={isVoted ? <BellOff width={17} /> : <BellRing width={17} />} className="w-full mt-2">
         {isVoted ? "Unsubscribe" : "Subscribe"}
       </Button>
     </div>
